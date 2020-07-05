@@ -1,0 +1,9 @@
+{
+  "General": {
+    "HelloWorld": "Bonjour le monde"
+  },
+  "Menu": {
+    "MainMaps": "Carte Principal",
+    "Options": "Options"
+  }
+}
