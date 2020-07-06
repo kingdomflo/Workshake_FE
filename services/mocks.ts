@@ -1,5 +1,18 @@
 import Store from "../models/Store";
 
+export const MOCK_GET_STORE = {
+  "id": 1,
+  "label": "Anspach",
+  "workShake": false,
+  "latitude": 50.849174,
+  "longitude": 4.350923,
+  "chainStore": {
+    "id": 1,
+    "label": "Quick",
+    "logo": "some image"
+  }
+}
+
 export const MOCK_GET_STORES = [
   {
     "id": 2,
@@ -13,16 +26,5 @@ export const MOCK_GET_STORES = [
       "logo": "some image"
     }
   },
-  {
-    "id": 1,
-    "label": "Anspach",
-    "workShake": false,
-    "latitude": 50.849174,
-    "longitude": 4.350923,
-    "chainStore": {
-      "id": 1,
-      "label": "Quick",
-      "logo": "some image"
-    }
-  }
+  MOCK_GET_STORE
 ]

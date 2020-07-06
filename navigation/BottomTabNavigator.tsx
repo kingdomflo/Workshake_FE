@@ -7,6 +7,7 @@ import Colors, { secondary, primary } from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import MainMapsScreen from '../screens/MainMapsScreen';
 import OptionScreen from '../screens/OptionScreen';
+import StoreScreen from '../screens/StoreScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -50,9 +51,14 @@ function TabOneNavigator() {
   return (
     <TabOneStack.Navigator>
       <TabOneStack.Screen
-        name="TabOneScreen"
+        name="TabMapsScreen"
         component={MainMapsScreen}
         options={{ headerTitle: 'Main Maps', headerTintColor: secondary, headerStyle: { backgroundColor: primary } }}
+      />
+      <TabOneStack.Screen
+        name="TabMapsDetailScreen"
+        component={StoreScreen}
+        options={{ headerTitle: 'Store', headerTintColor: secondary, headerStyle: { backgroundColor: primary } }}
       />
     </TabOneStack.Navigator>
   );
@@ -64,7 +70,7 @@ function TabTwoNavigator() {
   return (
     <TabTwoStack.Navigator>
       <TabTwoStack.Screen
-        name="TabTwoScreen"
+        name="TabOptionScreen"
         component={OptionScreen}
         options={{ headerTitle: 'Options', headerTintColor: secondary, headerStyle: { backgroundColor: primary } }}
       />

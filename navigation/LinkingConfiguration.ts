@@ -8,12 +8,13 @@ export default {
         screens: {
           TabOne: {
             screens: {
-              TabOneScreen: 'one',
+              TabMapsScreen: 'TabMapsScreen',
+              TabMapsDetailScreen: 'TabMapsDetailScreen'
             },
           },
           TabTwo: {
             screens: {
-              TabTwoScreen: 'two',
+              TabOptionScreen: 'TabOptionScreen',
             },
           },
         },

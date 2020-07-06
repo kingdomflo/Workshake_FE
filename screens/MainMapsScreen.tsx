@@ -8,6 +8,7 @@ import Region from '../models/Region';
 import { GetStores } from '../services/store.service';
 import Store from '../models/Store';
 import { calculateRegionToAskMarker, buildRegion } from '../utils/GenericMethod';
+import { useNavigation } from '@react-navigation/native';
 
 export default function MainMapsScreen() {
 
@@ -17,6 +18,8 @@ export default function MainMapsScreen() {
   const [region, setRegion] = useState(buildRegion(latitude, longitude));
   const [location, setLocation] = useState(null as any);
   const [stores, setStores] = useState([] as Store[]);
+
+  const navigation = useNavigation();
 
   useEffect(() => {
     (async () => {
@@ -57,13 +60,21 @@ export default function MainMapsScreen() {
         onRegionChangeComplete={e => {
           console.log('on region change complete', e);
           getMarkersForPosition();
-        }
-        }
+        }}
         // For proposing new milk shake position
         onLongPress={e => console.log(e.nativeEvent)}
+        moveOnMarkerPress={false}
       >
         {stores.map(e => (
-          <Marker coordinate={{ latitude: e.latitude, longitude: e.longitude }} key={e.id}>
+          <Marker
+            coordinate={{ latitude: e.latitude, longitude: e.longitude }}
+            key={e.id}
+            onPress={elem => {
+              console.log('touch store marker', e);
+              navigation.navigate('TabMapsDetailScreen', {
+                id: e.id
+              });
+            }}>
             <StoreMarker store={e} />
           </Marker>
         ))}
