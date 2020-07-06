@@ -11,12 +11,15 @@ import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
 import en from './i18n/en.json';
 import fr from './i18n/fr.json';
+import UserContext from './hooks/useUserContext';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
 
   const [acceptedLanguage, setAcceptedLanguage] = useState(['en', 'fr']);
+
+  const user = useState(null as any);
 
   useEffect(() => {
     console.log(Localization.locale);
@@ -43,10 +46,13 @@ export default function App() {
     return null;
   } else {
     return (
-      <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar />
-      </SafeAreaProvider>
+      <UserContext.Provider value={user}>
+        <SafeAreaProvider>
+          <Navigation colorScheme={colorScheme} />
+          <StatusBar />
+        </SafeAreaProvider>
+      </UserContext.Provider>
+
     );
   }
 }

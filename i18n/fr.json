@@ -1,9 +1,16 @@
 {
   "General": {
-    "HelloWorld": "Bonjour le monde"
+    "HelloWorld": "Bonjour le monde",
+    "Password": "Mot de passe",
+    "Email": "Email"
   },
   "Menu": {
     "MainMaps": "Carte Principal",
     "Options": "Options"
+  },
+  "Option": {
+    "Login": "Connection",
+    "Langage": "Langue",
+    "GoLogin": "Se connecter"
   }
 }

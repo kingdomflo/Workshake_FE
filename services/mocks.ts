@@ -28,3 +28,9 @@ export const MOCK_GET_STORES = [
   },
   MOCK_GET_STORE
 ]
+
+export const MOCK_GET_USER = {
+  name: 'Samy Gnu',
+  email: 'samy@gnu.no',
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2FteSBHbnUiLCJyb2xlIjpbInVzZXIiXSwiaWQiOjQyfQ.RyrOyCjuxK33qQ0rGSH6tn6abEDY2C4MuyGXLy8yuaQ'
+}
